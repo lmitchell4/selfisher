@@ -44,13 +44,13 @@ doc-update: $(PACKAGE)/R/*.R
 ## vignettes
 
 ## list of vignette inputs:
-rnw_vig += 
+## rnw_vig += 
 rmd_vig += bootstrap catch_comparison_subsampling simple troubleshooting
 
 docdir = $(PACKAGE)/inst/doc
 vigdir = $(PACKAGE)/vignettes
 
-docpdf :=  $(rnw_vig:%=${docdir}/%.pdf)
+## docpdf :=  $(rnw_vig:%=${docdir}/%.pdf)
 dochtml := $(rmd_vig:%=${docdir}/%.html)
 
 ## LaTeX/BibTeX must run in the same directory as the file ...
@@ -65,7 +65,7 @@ $(vigdir)/%.pdf: $(vigdir)/%.[Rr]nw
 $(docdir)/%: $(vigdir)/%
 	mv $< $@
 
-$(vigdir)/model_evaluation.html: $(vigdir)/model_evaluation.rmd texreg
+## $(vigdir)/model_evaluation.html: $(vigdir)/model_evaluation.rmd texreg
 
 vignette-update: ${docpdf} ${dochtml}
 
